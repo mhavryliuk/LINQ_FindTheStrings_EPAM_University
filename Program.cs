@@ -10,14 +10,20 @@ using System.Linq;
  * Element[2]: a
  * Element[3]: string
  * Input the minimum length of the item you want to find: 5
- * Expected Output: The items of minimum 5 characters are :
- * Item: string */
+ * Expected Output: The items of minimum 5 characters are: "string" */
 
 namespace _20180327_Task3_LINQ2
 {
-    class Program
+    internal class Program
     {
-        static void Main()
+        private static void Main()
+        {
+            FindTheString();
+
+            Console.ReadKey();
+        }
+
+        private static void FindTheString()
         {
             try
             {
@@ -37,8 +43,8 @@ namespace _20180327_Task3_LINQ2
                 int numberOfLetters = int.Parse(Console.ReadLine());
 
                 var answer = from word in array
-                             where word.Length >= numberOfLetters
-                             select word;
+                    where word.Length >= numberOfLetters
+                    select word;
 
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write($"\nA word(s) from {numberOfLetters} characters or more: \n");
@@ -50,10 +56,10 @@ namespace _20180327_Task3_LINQ2
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Input Error!");
-                Console.WriteLine("Please try again later...");
+                Console.WriteLine("Please try again...\n");
+                Console.ResetColor();
+                FindTheString();
             }
-
-            Console.ReadKey();
         }
     }
 }
