@@ -43,8 +43,8 @@ namespace _20180327_Task3_LINQ2
                 int numberOfLetters = int.Parse(Console.ReadLine());
 
                 var answer = from word in array
-                    where word.Length >= numberOfLetters
-                    select word;
+                             where word.Length >= numberOfLetters
+                             select word;
 
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write($"\nA word(s) from {numberOfLetters} characters or more: \n");
